@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama Sonuçları</title>
+    <link rel="stylesheet" href="{% static 'result.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Arama Sonuçları</h1>
+
+        {% if sonSekil %}
+            <p>Bunu mu demek istemiştiniz?: {{ sonSekil }}
+                 
+            </p>
+        {% endif %}
+
+        <select id="list-selector">
+            <option value="yayin_adi_list">Yayın Adları (Sıralı)</option>
+            <option value="yayin_adi_list_kb">Yayın Adları (Yeniden Eskiye)</option>
+            <option value="yayin_adi_list_bk">Yayın Adları (Eskiden Yeniye)</option>
+        </select>
+        
+        <select id="filter-selector">
+            <option value="yayin_adi_list_alinti">Alıntı Sayısı</option>
+            <option value="yayin_adi_list_doi">DOI</option> 
+            <option value="filtered_yayin_list">Hem DOI hem alıntı</option>
+        </select>
+
+        <div id="yayin_adi_list" class="list-container">
+            <h2>Yayın Adları (Sıralı)</h2>
+            <ul>
+                {% for yayin_adi in yayin_adi_list %}
+                    <li><a href="{% url 'get_yayin_detay' yayin_adi=yayin_adi %}">{{ yayin_adi }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="yayin_adi_list_kb" class="list-container" style="display: none;">
+            <h2>Yayın Adları (Yeniden Eskiye)</h2>
+            <ul>
+                {% for yayin_adi in yayin_adi_list_kb %}
+                    <li><a href="{% url 'get_yayin_detay' yayin_adi=yayin_adi %}">{{ yayin_adi }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="yayin_adi_list_bk" class="list-container" style="display: none;">
+            <h2>Yayın Adları (Eskiden Yeniye)</h2>
+            <ul>
+                {% for yayin_adi in yayin_adi_list_bk %}
+                    <li><a href="{% url 'get_yayin_detay' yayin_adi=yayin_adi %}">{{ yayin_adi }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="yayin_adi_list_alinti" class="list-container" style="display: none;">
+            <h2>Yayın Adları (Alıntı Sayısına Göre Filtrelenmiş)</h2>
+            <ul>
+                {% for yayin_adi in yayin_adi_list_alinti %}
+                        <li><a href="{% url 'get_yayin_detay' yayin_adi=yayin_adi %}">{{ yayin_adi }}</a> - Alıntı Sayısı: {{ alinti_sayisi }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="yayin_adi_list_doi" class="list-container" style="display: none;">
+          <h2>Yayın Adları (DOI'ya Göre Filtrelenmiş)</h2>
+          <ul>
+              {% for yayin_adi in yayin_doi_list %}
+                      <li><a href="{% url 'get_yayin_detay' yayin_adi=yayin_adi %}">{{ yayin_adi }}</a> - DOI: {{ doi }}</li>
+              {% endfor %}
+          </ul>
+      </div>
+      
+        <div id="filtered_yayin_list" class="list-container" style="display: none;">
+            <h2>Yayın Adları (HEM ALINTI HEM DOI'ya Göre Filtrelenmiş)</h2>
+            <ul>
+                {% for yayin_adi in filtered_yayin_list %}
+                        <li><a href="{% url 'get_yayin_detay' yayin_adi=yayin_adi %}">{{ yayin_adi }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <br>
+        <a href="{% url 'homePage' %}">Arama Yap</a>
+    </div>
+    <script src="{% static 'result.js' %}"></script>
+</body>
+</html>

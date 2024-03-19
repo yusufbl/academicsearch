@@ -1,0 +1,140 @@
+body {
+    background-image: url('Photos/koufoto.webp');
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-attachment: fixed; /* Arka planın sabit kalmasını sağlar */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #02c536;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Liste öğelerinin arka plan rengi */
+    border-radius: 5px; /* Kenar yuvarlaklığı */
+    padding: 10px; /* Liste öğelerinin iç boşluğu */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölgelendirme */
+}
+
+ul li a {
+    color: #028a2a;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #028a2a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: #777;
+}
+
+a.back-link {
+    display: block;
+    margin-top: 20px;
+    color: #028a2a;
+    text-decoration: none;
+}
+
+a.back-link:hover {
+    text-decoration: underline;
+}
+
+a.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px; /* Bağlantı içeriği etrafındaki boşluk */
+    background-color: #028a2a; /* Arkaplan rengi */
+    color: #fff; /* Metin rengi */
+    text-decoration: none;
+    border-radius: 5px; /* Kenar yuvarlaklığı */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+}
+
+a.back-link:hover {
+    background-color: #026520; /* Hover durumunda arkaplan rengi */
+}
+
+#list-selector {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Yeni eklenen stil */
+}
+
+#list-selector option {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#list-selector option:hover {
+    background-color: #f0f0f0;
+}
+
+#list-selector option:checked {
+    font-weight: bold;
+}
+
+#filter-selector {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Yeni eklenen stil */
+}
+
+#filter-selector option {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#filter-selector option:hover {
+    background-color: #f0f0f0;
+}
+
+#filter-selector option:checked {
+    font-weight: bold;
+}

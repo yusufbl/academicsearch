@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayın Detayı - {{ yayin.yayin_adi }}</title>
+
+    <link rel="stylesheet" href="{% static 'publication-detail.css' %}">
+</head>
+<body>
+    <div class= "container">
+        {% if error_message %}
+            <p>{{ error_message }}</p>
+        {% else %}
+
+            <h1>{{ yayin.yayin_adi }}</h1>
+
+            <a id="downloadPDF" href="#" data-pdf-url="{{ yayin.article_toolbar_link }}">PDF'yi İndir</a>
+
+            
+            <h3>Yazarlar: </h3>
+            <p>{{ yayin.yazarlarin_isimleri|join:", " }}</p>
+            <h3>Özet: </h3>
+            <p>{{ yayin.ozet }}</p>
+            <h3>Yayın Adı: </h3>
+            <p>{{ yayin.yayin_adi }}</p>
+            <h3>Anahtar Kelimeler:</h3>
+            <p>{{ yayin.anahtar_kelimeler_makale|join:", " }}</p>
+            <h3>Yayıncı Adı: </h3>
+            <p>{{ yayin.yayinci_adi }}</p>
+            <h3>Yazarların İsimleri:</h3>
+            <p>{{ yayin.yazarlarin_isimleri|join:", " }}</p>
+            <h3>Yayımlanma Tarihi:</h3>
+            <p>{{ yayin.yayimlanma_tarihi }}</p>
+            <h3>Yayın Türü:</h3>
+            <p>{{ yayin.yayin_turu }}</p>
+            <h3>DOI:</h3>
+            <p>{{ yayin.doi }}</p>
+            <h3>Alıntı Sayısı:</h3>
+            <p>{{ yayin.alinti_sayisi }}</p>
+            <h3>Referanslar:</h3>
+            <p>{{ yayin.referanslar|join:", " }}</p>
+            
+            
+        {% endif %}
+    </div>  
+    
+    <script src="{% static 'publication-detail.js' %}"></script>
+
+    <script>
+        var yayinData = JSON.parse(document.getElementById('yayin-data').textContent);
+    </script>
+
+</body>
+</html>

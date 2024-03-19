@@ -1,0 +1,65 @@
+body {
+    background-image: url('Photos/koufoto.webp');
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-attachment: fixed; /* Arka planın sabit kalmasını sağlar */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #02c536;
+}
+
+h3 {
+    color: #028a2a; /* Başlık rengi */
+    margin-top: 20px; /* Başlık üst boşluğu */
+}
+
+p {
+    color: #777; /* Metin rengi */
+    margin-bottom: 10px; /* Metin alt boşluğu */
+    text-align: left; /* Metni sola hizalama */
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px; /* Bağlantı içeriği etrafındaki boşluk */
+    background-color: #028a2a; /* Arkaplan rengi */
+    color: #fff; /* Metin rengi */
+    text-decoration: none;
+    border-radius: 5px; /* Kenar yuvarlaklığı */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+}
+
+a:hover {
+    background-color: #026520; /* Hover durumunda arkaplan rengi */
+}
+
+#downloadPDF {
+    padding: 12px 24px;
+    border: none;
+    background-color: #02c536;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
